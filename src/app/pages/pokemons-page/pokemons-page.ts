@@ -42,7 +42,9 @@ export class PokemonsPage implements OnInit {
     //   const page = params['page'] || 0;
     //   this.loadPokemons(page);
     // });
-    this.geoLocation();
+
+
+    //this.geoLocation();
   }
 
   public loadPokemons(page: number = 0) {

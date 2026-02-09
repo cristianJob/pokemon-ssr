@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { isPlatformBrowser } from '@angular/common';
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class GeolocationService {
 
   getPosition(): Observable<GeolocationPosition> {
     return new Observable(observer => {
-      if (!isPlatformBrowser) {
+      if (!navigator.geolocation) {
         observer.error('Geolocalización no soportada');
         return;
       }
